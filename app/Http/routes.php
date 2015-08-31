@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+
+
+Route::resource('{word}/{sourseLang}/{targetLang}', 'TranslateController');
+
