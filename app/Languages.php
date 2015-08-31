@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class English extends Model
+class Languages extends Model
 {
-    protected $fillable = ['word'];
+    protected $fillable = ['name'];
 }

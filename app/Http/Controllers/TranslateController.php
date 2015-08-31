@@ -8,6 +8,7 @@ class TranslateController extends Controller {
 
     public function Index($word, $from, $to)
     {
+        echo $word . ' ' .$from . ' ' . $to;
 
     }
 
