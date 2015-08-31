@@ -14,7 +14,8 @@ class CreateLanguagesTable extends Migration
     {
             Schema::create('languages', function($table){
             $table->increments('id');
-            $table->string('name',120);
+            $table->string('name')->unique();
+            $table->timestamps();
         });
     }
 

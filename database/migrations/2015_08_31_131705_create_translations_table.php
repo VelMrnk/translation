@@ -20,8 +20,8 @@ class CreateTranslationsTable extends Migration
             $table->integer('tLangId');
             $table->integer('sWordId');
             $table->integer('tWordId');
-            $table->index(['sLangId', 'tLangId', 'sWordId', 'tWordId']);
-
+            $table->unique(['sLangId', 'tLangId', 'sWordId', 'tWordId']);
+            $table->timestamps();
         });
     }
 
