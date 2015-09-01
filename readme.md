@@ -30,21 +30,4 @@ with two '_'
 
 Then add your data to tables, (language) and (translations)
 
-Last what you need to do is open App/Translate.php and add your new languages to switch fields and call class.
-For example: 
-
-switch (strtolower($from)) {
-            
-            case 'spanish':
-                $sWord = new Spanish_Word();
-                break;
-        }
-
-        switch (strtolower($to)) {
-            case 'spanish':
-                $tWord = new Spanish_Word();
-                break;
-        }
-
-
 e-mail: valentinemurnik@gmail.com
