@@ -27,6 +27,6 @@ class CreateEnglishWordsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('english_words');
+        Schema::drop('english__words');
     }
 }

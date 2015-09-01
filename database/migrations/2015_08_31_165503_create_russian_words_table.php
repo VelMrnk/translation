@@ -27,6 +27,6 @@ class CreateRussianWordsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('russian_words');
+        Schema::drop('russian__words');
     }
 }

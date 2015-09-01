@@ -5,6 +5,7 @@ use Illuminate\Database\Seeder;
 use App\Languages;
 use App\English_Word;
 use App\Russian_Word;
+use App\French_Word;
 use App\Translations;
 
 
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call('LanguageSeeder');
         $this->call('EnglishSeeder');
         $this->call('RussianSeeder');
+        $this->call('FrenchSeeder');
         $this->call('TranslationSeeder');
     }
 }
@@ -45,6 +47,10 @@ class LanguageSeeder extends Seeder
             'name' => 'Russian'
         ]);
 
+        Languages::create([
+            'name' => 'French'
+        ]);
+
     }
 }
 
@@ -58,16 +64,7 @@ class EnglishSeeder extends Seeder
     public function run()
     {
 
-        Languages::truncate();
         English_Word::truncate();
-
-        Languages::create([
-            'name' => 'English'
-        ]);
-
-        Languages::create([
-            'name' => 'Russian'
-        ]);
 
         English_Word::create([
             'word' => 'bird'
@@ -109,6 +106,33 @@ class RussianSeeder extends Seeder
     }
 }
 
+class FrenchSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+
+        French_Word::truncate();
+
+        French_Word::create([
+            'word' => 'oiseau'
+        ]);
+
+        French_Word::create([
+            'word' => 'cuo'
+        ]);
+
+        French_Word::create([
+            'word' => 'arrêtez-vous'
+        ]);
+
+    }
+}
+
 
 class TranslationSeeder extends Seeder
 {
@@ -137,6 +161,28 @@ class TranslationSeeder extends Seeder
 
         Translations::create([
             'sLangId' => '1',
+            'tLangId' => '2',
+            'sWordId' => '3',
+            'tWordId' => '3'
+        ]);
+
+
+        Translations::create([
+            'sLangId' => '1',
+            'tLangId' => '3',
+            'sWordId' => '2',
+            'tWordId' => '1'
+        ]);
+
+        Translations::create([
+            'sLangId' => '2',
+            'tLangId' => '3',
+            'sWordId' => '2',
+            'tWordId' => '2'
+        ]);
+
+        Translations::create([
+            'sLangId' => '3',
             'tLangId' => '2',
             'sWordId' => '3',
             'tWordId' => '3'

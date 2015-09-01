@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLanguagesTable extends Migration
+class CreateFrenchWordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,10 @@ class CreateLanguagesTable extends Migration
      */
     public function up()
     {
-            Schema::create('languages', function($table){
+        Schema::create('french__words', function($table)
+        {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('word')->unique();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('languages');
+        Schema::drop('french_words');
     }
 }
