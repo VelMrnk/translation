@@ -11,32 +11,13 @@ class Translate extends Model
     public static function getTranslate($word, $from, $to)
     {
 
-        //Create object for called language
-        switch (strtolower($from)) {
-            case 'english':
-                $sWord = new English_Word();
-                break;
-            case 'russian':
-                $sWord = new Russian_Word();
-                break;
-            case 'french':
-                $sWord = new French_Word();
-                break;
-        }
+        //Create path to languages models
+        $fromModel = "App\\".ucfirst($from).'_Word';
+        $toModel = "App\\".ucfirst($to).'_Word';
 
-        switch (strtolower($to)) {
-            case 'english':
-                $tWord = new English_Word();
-                break;
-            case 'russian':
-                $tWord = new Russian_Word();
-                break;
-            case 'french':
-                $tWord = new French_Word();
-                break;
-
-        }
-
+        //Create languages models objects
+        $sWord = new $fromModel;
+        $tWord = new $toModel;
 
         if (!isset($sWord)) {
 
